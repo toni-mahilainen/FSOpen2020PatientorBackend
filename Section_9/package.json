@@ -1,11 +1,25 @@
 {
-  "name": "patientor-backend",
-  "version": "0.0.1",
-  "description": "",
-  "main": "index.ts",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Toni Mahilainen",
-  "license": "ISC"
+    "name": "patientor-backend",
+    "version": "0.0.1",
+    "description": "",
+    "main": "index.ts",
+    "scripts": {
+        "tsc": "tsc",
+        "dev": "ts-node-dev index.ts",
+        "lint": "eslint --ext .ts .",
+        "start": "node build/index.js"
+    },
+    "author": "Toni Mahilainen",
+    "license": "ISC",
+    "devDependencies": {
+        "eslint": "^7.16.0",
+        "ts-node-dev": "^1.1.1",
+        "typescript": "^4.1.3"
+    },
+    "dependencies": {
+        "@types/express": "^4.17.9",
+        "@typescript-eslint/eslint-plugin": "^4.11.1",
+        "@typescript-eslint/parser": "^4.11.1",
+        "express": "^4.17.1"
+    }
 }
