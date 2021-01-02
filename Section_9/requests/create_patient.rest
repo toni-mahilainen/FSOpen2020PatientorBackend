@@ -1,0 +1,10 @@
+POST http://localhost:3001/api/patients
+Content-Type: application/json
+
+{
+    "name": "Toni Mahilainen",
+    "dateOfBirth": "1987-09-24",
+    "ssn": "240987-1265",
+    "gender": "male",
+    "occupation": "Software Developer"
+}

@@ -7,7 +7,8 @@
         "tsc": "tsc",
         "dev": "ts-node-dev src/index.ts",
         "lint": "eslint --ext .ts .",
-        "start": "node build/index.js"
+        "start": "node build/index.js",
+        "testi": "ts-node testi.ts"
     },
     "author": "Toni Mahilainen",
     "license": "ISC",
@@ -22,6 +23,7 @@
         "@typescript-eslint/eslint-plugin": "^4.11.1",
         "@typescript-eslint/parser": "^4.11.1",
         "cors": "^2.8.5",
-        "express": "^4.17.1"
+        "express": "^4.17.1",
+        "finnish-ssn": "^2.0.4"
     }
 }
