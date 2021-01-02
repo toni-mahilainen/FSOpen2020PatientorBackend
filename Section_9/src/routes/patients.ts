@@ -1,6 +1,6 @@
 import express from 'express';
 import patientService from '../services/patientService';
-import { NewPatient } from '../types';
+import toNewPatient from '../utils';
 
 const router = express.Router();
 
@@ -9,13 +9,8 @@ router.get('/', (_req, res) => {
 });
 
 router.post('/', (req, res) => {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    const { name, dateOfBirth, ssn, gender, occupation }: NewPatient = req.body;
-
     try {
-        const newPatient: NewPatient = {
-            name, dateOfBirth, ssn, gender, occupation
-        };
+        const newPatient = toNewPatient(req.body);
 
         res.send(patientService.createPatient(newPatient));
     } catch (error) {

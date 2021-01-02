@@ -4,7 +4,7 @@ Content-Type: application/json
 {
     "name": "Toni Mahilainen",
     "dateOfBirth": "1987-09-24",
-    "ssn": "240987-1265",
+    "ssn": "240987-1255",
     "gender": "male",
     "occupation": "Software Developer"
 }
