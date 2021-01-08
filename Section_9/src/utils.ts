@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/restrict-plus-operands */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import { Gender, NewPatient } from './types';
+import { Entry, Gender, NewPatient } from './types';
 
 const isDate = (data: any): boolean => {
     return Boolean(Date.parse(data));
@@ -19,6 +19,10 @@ const isSsnValid = (ssn: any): boolean => {
 
 const isString = (text: any): text is string => {
     return typeof text === 'string' || text instanceof String;
+};
+
+const isArray = (array: any): array is Array<Entry> => {
+    return Array.isArray(array) || array instanceof Array;
 };
 
 const parseName = (name: any): string => {
@@ -61,13 +65,23 @@ const parseOccupation = (occupation: any): string => {
     return occupation;
 };
 
+const parseEntries = (entries: any): Array<Entry> => {
+
+    if (!entries || !isArray(entries)) {
+        throw new Error('Incorrect or missing entries: ' + entries);
+    }
+
+    return entries;
+};
+
 const toNewPatient = (object: any): NewPatient => {
     return {
         name: parseName(object.name),
         dateOfBirth: parseDateOfBirth(object.dateOfBirth),
         ssn: parseSsn(object.ssn),
         gender: parseGender(object.gender),
-        occupation: parseOccupation(object.occupation)
+        occupation: parseOccupation(object.occupation),
+        entries: parseEntries(object.entries)
     };
 };
 
