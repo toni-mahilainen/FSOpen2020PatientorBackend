@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from 'uuid';
 import patients from '../../data/patients';
 import { Patient, NewPatient, PublicPatient } from '../types';
 
@@ -29,8 +30,17 @@ const createPatient = (newPatientData: NewPatient): Patient => {
     return newPatient;
 };
 
+const createNewEntry = (): void => {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
+    const id: string = uuidv4();
+    console.log('random', id);
+
+    // return newPatient;
+};
+
 export default {
     getNonSensitivePatientData,
     getPatientWithId,
-    createPatient
+    createPatient,
+    createNewEntry
 };

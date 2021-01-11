@@ -29,7 +29,7 @@ interface HospitalEntry extends BaseEntry {
     discharge: Discharge;
 }
 
-interface Discharge {
+export interface Discharge {
     date: string;
     criteria: string;
 }
@@ -37,10 +37,10 @@ interface Discharge {
 interface OccupationalHealthcareEntry extends BaseEntry {
     type: "OccupationalHealthcare";
     employerName: string;
-    sickLeave: SickLeave;
+    sickLeave?: SickLeave;
 }
 
-interface SickLeave {
+export type SickLeave = {
     startDate: string;
     endDate: string;
 }
@@ -51,6 +51,10 @@ interface HealthCheckEntry extends BaseEntry {
 }
 
 export type NewPatient = Omit<Patient, 'id'>;
+
+export type NewHospitalEntry = Omit<HospitalEntry, 'id'>;
+export type NewOccupationalHealthcareEntry = Omit<OccupationalHealthcareEntry, 'id'>;
+export type NewHealthCheckEntry = Omit<HealthCheckEntry, 'id'>;
 
 export type PublicPatient = Omit<Patient, 'ssn' | 'entries'>;
 
