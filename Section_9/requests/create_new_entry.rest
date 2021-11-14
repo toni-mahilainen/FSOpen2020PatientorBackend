@@ -1,0 +1,31 @@
+POST http://localhost:3001/api/patients/d2773822-f723-11e9-8f0b-362b9e155667/entries
+Content-Type: application/json
+
+# {
+#     "date": "2021-01-02",
+#     "type": "Hospital",
+#     "specialist": "MD House",
+#     "diagnosisCodes": ["S62.5"],
+#     "description": "Healing time appr. 2 weeks. Patient doesn't remember how he got the injury again.",
+#     "discharge": {
+#         "date": "2021-01-10",
+#         "criteria": "Thumb has healed well."
+#     }
+# }
+
+{
+    "date": "2019-09-30",
+    "specialist": "MD House",
+    "type": "OccupationalHealthcare",
+    "employerName": "FBI",
+    "diagnosisCodes": ["Z57.1", "Z74.3", "M51.2"],
+    "description": "Patient mistakenly found himself again and again in a nuclear plant waste site without protection gear. Very minor radiation poisoning."
+}
+
+# {
+#     "date": "2019-10-30",
+#     "specialist": "MD House",
+#     "type": "HealthCheck",
+#     "description": "Yearly control visit. Cholesterol levels are high.",
+#     "healthCheckRating": 2
+# }
